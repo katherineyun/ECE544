@@ -1,0 +1,93 @@
+\usepackage{amsmath,graphicx,cite,latexsym,color, amssymb,ifthen,verbatim}
+
+\usepackage{listings}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+}
+\lstset{basicstyle=\small\ttfamily,breaklines=true}
+
+%--------------- Various Style Declarations ----------------------------
+\textheight 9in
+\topmargin 0in
+\headheight 0in
+\headsep 0in
+\textwidth 6.5in
+\oddsidemargin 0in
+\evensidemargin 0in
+\footskip 0.2in
+\parskip 5pt
+\parindent 0pt
+\topsep 2pt
+\partopsep 0pt
+\itemsep 0pt
+\pagenumbering{arabic}
+
+\definecolor{shade}{gray}{0.85}
+
+
+\newcommand{\solpagesize}%
+{\ifthenelse{\equal{\type}{solutions}}{
+\textheight9in
+\textwidth6.5in
+\oddsidemargin0in
+\evensidemargin0in
+\topmargin-0.75in
+\topskip0in
+\footskip0.70in
+\pagestyle{empty}
+\parskip 5pt
+\parindent 0pt
+}{}}
+
+\newcommand{\bookletskip}[1] %
+{\ifthenelse{\equal{\type}{booklet}}{\vspace{#1 in}}
+}
+
+\newcommand{\bookletpage} %
+{\ifthenelse{\equal{\type}{booklet}}{\newpage}{}
+}
+
+\newcommand{\inbooklet}[1]{\ifthenelse{\equal{\type}{booklet}}{{#1}}}
+
+ 
+ \newcommand{\lecture}[4]{
+ 	\thispagestyle{empty}
+ 	\baselineskip2.5ex
+ 	{\bf University of Illinois}
+ 	\hfill
+ 	Fall 2018
+ 	
+ 	{\Large
+ 		\begin{center}
+ 			{\sf ECE\,544NA: Pattern Recognition}\\ Lecture #1: #2\\
+ 		\end{center}
+ 	}
+ 	{\large
+ 		\begin{center}
+ 			{Lecturer: #3 \hfill Scribes: #4}\\
+ 		\end{center}
+ 	}
+ }
+ 
+ % Use these for theorems, lemmas, proofs, etc.
+ \newtheorem{theorem}{Theorem}
+ \newtheorem{lemma}[theorem]{Lemma}
+ \newtheorem{proposition}[theorem]{Proposition}
+ \newtheorem{claim}[theorem]{Claim}
+ \newtheorem{corollary}[theorem]{Corollary}
+ \newtheorem{definition}[theorem]{Definition}
+ \newenvironment{proof}{{\bf Proof:}}%{\hfill\rule{2mm}{2mm}}
+
+%%%%%%%  ENTER SOME PROBLEM SET SPECIFIC STUFF HERE  %%%%
+
